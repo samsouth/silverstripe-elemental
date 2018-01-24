@@ -16,7 +16,7 @@ use SilverStripe\Forms\GridField\GridFieldPaginator;
 use SilverStripe\Forms\GridField\GridFieldSortableHeader;
 use SilverStripe\Forms\GridField\GridFieldVersionedState;
 use Symbiote\GridFieldExtensions\GridFieldAddNewMultiClass;
-use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
+use Heyday\GridFieldVersionedOrderableRows\GridFieldVersionedOrderableRows;
 
 class ElementalEditor
 {
@@ -119,7 +119,7 @@ class ElementalEditor
                     GridFieldVersionedState::class,
                     GridFieldAddExistingAutocompleter::class,
                 ))
-                ->addComponent(new GridFieldOrderableRows('Sort'))
+                ->addComponent(new GridFieldVersionedOrderableRows('Sort'))
                 // delete elements rather than unlinking them
                 ->addComponent(new GridFieldDeleteAction(false))
         );
